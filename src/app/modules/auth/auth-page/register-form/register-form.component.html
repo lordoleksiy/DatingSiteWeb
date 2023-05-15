@@ -1,0 +1,22 @@
+<form class="register_form" (ngSubmit)="onSubmit()" [formGroup]="form">
+  <h2>Register</h2>
+  <input type="text" placeholder="Name" formControlName="name">
+  <div *ngIf="form.get('name')?.invalid && submitted" class="error-message">
+    <div *ngIf="form.get('name')?.errors?.['required']">Name is required</div>
+  </div>
+  <input type="email" placeholder="Email" formControlName="email">
+  <div *ngIf="form.get('email')?.invalid && submitted" class="error-message">
+    <div *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
+    <div *ngIf="form.get('email')?.errors?.['email']">Invalid email format</div>
+  </div>
+  <input type="password" placeholder="Password" formControlName="password">
+  <div *ngIf="form.get('password')?.invalid && submitted" class="error-message">
+    <div *ngIf="form.get('password')?.errors?.['required']">Password is required</div>
+    <div *ngIf="form.get('password')?.errors?.['min-length']">min-length of password is 6 symbols</div>
+  </div>
+  <input type="password" placeholder="Confirm Password" formControlName="passwordAgain">
+  <div *ngIf="form.errors?.['passwordMismatch'] && submitted" class="error-message">
+    <div >Passwords must be equal</div>
+  </div>
+  <button type="submit">Register</button>
+</form>

@@ -1,0 +1,14 @@
+<form class="login_form" (ngSubmit)="onSubmit()" [formGroup]="form">
+  <h2>Login</h2>
+  <input type="email" formControlName = "email" placeholder="Email">
+  <div *ngIf="form.get('email')?.invalid && submitted" class="error-message">
+    <div *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
+    <div *ngIf="form.get('email')?.errors?.['email']">Invalid email format</div>
+  </div>
+  <input type="password" formControlName = "password" placeholder="Password">
+  <div *ngIf="form.get('password')?.invalid && submitted" class="error-message">
+    <div *ngIf="form.get('password')?.errors?.['required']">Password is required</div>
+    <div *ngIf="form.get('password')?.errors?.['min-length']">min-length of password is 6 symbols</div>
+  </div>
+  <button type="submit">Log In</button>
+</form>
