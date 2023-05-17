@@ -1,0 +1,33 @@
+<button (click)="isSearchClosed = false" class="filters-button" [ngClass]="{'closed': !isSearchClosed}">Filters</button>
+<div class="search" [ngClass]="{ 'closed': isSearchClosed }">
+  <div class="form-group">
+    <label for="gender">Gender:</label>
+    <select id="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="non-binary">Non-Binary</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="location">Location:</label>
+    <input type="text" id="location">
+  </div>
+
+  <div class="form-group">
+    <label>Keywords:</label>
+    <div class="keyword-container" id="keywordContainer">
+      <span class="keyword-item">Keyword1</span>
+      <span class="keyword-item">Keyword2</span>
+      <span class="keyword-item">Keyword3</span>
+    </div>
+    <div class="keyword-group">
+      <input type="text" id="keyword-input">
+      <button type="button" id="add-keyword">Add Keyword</button>
+    </div>
+
+  </div>
+
+  <button type="submit" class="search-button" (click)="Search()">Search</button>
+</div>

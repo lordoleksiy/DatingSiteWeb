@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../../../../services/auth.service";
+import {AuthService} from "../../../../services/auth/auth.service";
 import {passwordMatchValidator} from "./passwordValidator";
+import {INewUser} from "../../../../models/INewUser";
+import {ToastrService} from "ngx-toastr";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-form',
@@ -14,7 +17,9 @@ export class RegisterFormComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastrService: ToastrService,
+    private router: Router
   )
   {
     this.form = formBuilder.group({
@@ -26,7 +31,6 @@ export class RegisterFormComponent {
       {
         validators: [passwordMatchValidator()]
       })
-
   }
   onSubmit(){
     this.submitted = true;
@@ -36,6 +40,20 @@ export class RegisterFormComponent {
     this.CreateUser();
   }
   private CreateUser = () =>{
-
+    const user: INewUser = {
+      username: this.form.get('name')?.value,
+      email: this.form.get('email')?.value,
+      password: this.form.get('password')?.value
+    }
+    this.authService.register(user).subscribe({
+      next: (val) => {
+        console.log(val);
+        this.toastrService.success("Success", "You are registered")
+        return this.router.navigateByUrl("/main");
+      },
+      error: (err)=> {
+        this.toastrService.error("Error", err.error.message)
+      }
+    })
   }
 }

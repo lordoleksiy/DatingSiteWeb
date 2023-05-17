@@ -8,7 +8,7 @@
   <input type="password" formControlName = "password" placeholder="Password">
   <div *ngIf="form.get('password')?.invalid && submitted" class="error-message">
     <div *ngIf="form.get('password')?.errors?.['required']">Password is required</div>
-    <div *ngIf="form.get('password')?.errors?.['min-length']">min-length of password is 6 symbols</div>
+    <div *ngIf="form.get('password')?.errors?.['minlength']">min-length of password is 6 symbols</div>
   </div>
   <button type="submit">Log In</button>
 </form>

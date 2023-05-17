@@ -1,0 +1,97 @@
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile {
+  width: 60%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.profile label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.profile input,
+.profile textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.profile .keywords-edit {
+  margin-top: 10px;
+}
+
+.profile .keyword {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile .keyword input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.profile .keyword .remove-keyword {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.profile .keyword .remove-keyword:hover {
+  background-color: #c82333;
+  cursor: pointer;
+}
+
+.profile .add-keyword {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.profile .add-keyword:hover {
+  background-color: #218838;
+  cursor: pointer;
+}
+
+.profile .save-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.profile .save-button:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+.invites {
+  width: 40%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.invites .invites-recycler {
+  margin-bottom: 10px;
+}
+
+.invites .invites-recycler span {
+  display: block;
+  margin-bottom: 5px;
+}
