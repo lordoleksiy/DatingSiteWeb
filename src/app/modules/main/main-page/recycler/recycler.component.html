@@ -1,0 +1,14 @@
+<h2 id="invite-header" [ngClass]="{'closed': !isSearchClosed}">Invite someone</h2>
+<div class="recycler" *ngIf="recyclerItems.length > 0">
+  <div class="recycler-item" *ngFor="let item of recyclerItems">
+    <h2>{{ item['firstName'] }} {{ item['lastName'] }}</h2>
+    <p>Age: {{ item['age'] }}</p>
+    <p>Gender: {{ item['gender'] }}</p>
+    <p>City: {{ item['city'] }}</p>
+    <p>Description: {{ item['description'] }}</p>
+    <div class="keyword-container">
+      <span class="keyword-item" *ngFor="let keyword of item.keywords">{{ keyword['word'] }}</span>
+    </div>
+    <button class="sendInvite">Send Invite</button>
+  </div>
+</div>

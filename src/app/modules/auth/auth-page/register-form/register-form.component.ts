@@ -4,6 +4,7 @@ import {AuthService} from "../../../../services/auth/auth.service";
 import {passwordMatchValidator} from "./passwordValidator";
 import {INewUser} from "../../../../models/INewUser";
 import {ToastrService} from "ngx-toastr";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-form',
@@ -17,7 +18,8 @@ export class RegisterFormComponent {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router
   )
   {
     this.form = formBuilder.group({
@@ -47,6 +49,7 @@ export class RegisterFormComponent {
       next: (val) => {
         console.log(val);
         this.toastrService.success("Success", "You are registered")
+        return this.router.navigateByUrl("/main");
       },
       error: (err)=> {
         this.toastrService.error("Error", err.error.message)

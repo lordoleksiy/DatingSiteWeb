@@ -12,9 +12,13 @@ import {AuthService} from "./auth.service";
 export class AuthInterceptor implements HttpInterceptor {
   constructor() {}
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const token = localStorage.getItem("AccessToken");
+    const token = localStorage.getItem("AccessKey");
     if (token != null){
-      request.headers.set("Authorization", `Bearer ${token}`)
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${token}`
+        }
+      });
     }
     return next.handle(request);
   }

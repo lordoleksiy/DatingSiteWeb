@@ -1,0 +1,33 @@
+<div class="profile-container">
+  <div class="profile">
+    <label>First Name:</label>
+    <input type="text" [(ngModel)]="profile.firstName">
+    <label>Last Name:</label>
+    <input type="text" [(ngModel)]="profile.lastName">
+    <label>Age:</label>
+    <input type="number" [(ngModel)]="profile.age">
+    <label>Gender:</label>
+    <input type="text" [(ngModel)]="profile.gender">
+    <label>City:</label>
+    <input type="text" [(ngModel)]="profile.city">
+    <label>Description:</label>
+    <textarea [(ngModel)]="profile.description"></textarea>
+    <label>Keywords:</label>
+    <div class="keywords-edit">
+      <div *ngFor="let keyword of profile.keywords; let i = index" class="keyword">
+        <input type="text" [(ngModel)]="profile.keywords[i].word">
+        <button class="remove-keyword" (click)="removeKeyword(i)">Remove</button>
+      </div>
+      <button class="add-keyword" (click)="addKeyword()">Add Keyword</button>
+    </div>
+    <button class="save-button" (click)="saveProfile()">Save</button>
+  </div>
+  <div class="invites">
+    <div *ngFor="let invite of invites" class="invites-recycler">
+      <span>From: {{ invite['from'] }}</span>
+      <span>To: {{ invite['to'] }}</span>
+      <span>Status: {{ invite['status'] }}</span>
+    </div>
+  </div>
+</div>
+
