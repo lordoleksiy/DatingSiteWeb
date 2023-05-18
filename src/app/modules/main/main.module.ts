@@ -5,6 +5,8 @@ import { SearchComponent } from './main-page/search/search.component';
 import { RecyclerComponent } from './main-page/recycler/recycler.component';
 import {ProfileService} from "../../services/profile.service";
 import {RouterLink} from "@angular/router";
+import {CommonElementsModule} from "../common-elements/common-elements.module";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -16,7 +18,9 @@ import {RouterLink} from "@angular/router";
   ],
   imports: [
     CommonModule,
-    RouterLink
+    FormsModule,
+    RouterLink,
+    CommonElementsModule
   ],
   providers:[
     ProfileService

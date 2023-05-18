@@ -2,31 +2,26 @@
 <div class="search" [ngClass]="{ 'closed': isSearchClosed }">
   <div class="form-group">
     <label for="gender">Gender:</label>
-    <select id="gender">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="non-binary">Non-Binary</option>
-      <option value="other">Other</option>
+    <select id="gender" [(ngModel)] = "filter.gender">
+      <option value="MALE">Male</option>
+      <option value="FEMALE">Female</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="location">Location:</label>
-    <input type="text" id="location">
+    <input type="text" id="location" [(ngModel)] = "filter.city">
   </div>
 
   <div class="form-group">
     <label>Keywords:</label>
     <div class="keyword-container" id="keywordContainer">
-      <span class="keyword-item">Keyword1</span>
-      <span class="keyword-item">Keyword2</span>
-      <span class="keyword-item">Keyword3</span>
+      <span class="keyword-item" *ngFor="let keyword of filter.keywords" (click)="RemoveKeyword(keyword)">{{keyword}}</span>
     </div>
     <div class="keyword-group">
-      <input type="text" id="keyword-input">
-      <button type="button" id="add-keyword">Add Keyword</button>
+      <input type="text" id="keyword-input" [(ngModel)] = "newKeyword">
+      <button type="button" id="add-keyword" (click)="AddKeyword()">Add Keyword</button>
     </div>
-
   </div>
 
   <button type="submit" class="search-button" (click)="Search()">Search</button>

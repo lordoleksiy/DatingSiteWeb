@@ -9,6 +9,6 @@
     <div class="keyword-container">
       <span class="keyword-item" *ngFor="let keyword of item.keywords">{{ keyword['word'] }}</span>
     </div>
-    <button class="sendInvite">Send Invite</button>
+    <button class="sendInvite" (click)="SendInvite(item['username'])">Send Invite</button>
   </div>
 </div>

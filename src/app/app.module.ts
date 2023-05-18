@@ -10,8 +10,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {JWT_OPTIONS, JwtHelperService} from "@auth0/angular-jwt";
 import {MainModule} from "./modules/main/main.module";
 import {AuthInterceptor} from "./services/auth/auth.interceptor";
-import {ProfileService} from "./services/profile.service";
 import {ProfileModule} from "./modules/profile/profile.module";
+import {CommonElementsModule} from "./modules/common-elements/common-elements.module";
+import {AuthService} from "./services/auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {ProfileModule} from "./modules/profile/profile.module";
     AuthModule,
     MainModule,
     ProfileModule,
+    CommonElementsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
@@ -35,7 +37,10 @@ import {ProfileModule} from "./modules/profile/profile.module";
       useClass: AuthInterceptor,
       multi: true
     },
-    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }
+    {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    AuthService
+  ],
+  exports: [
   ],
   bootstrap: [AppComponent]
 })

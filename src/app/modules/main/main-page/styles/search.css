@@ -73,6 +73,10 @@ select {
   border-radius: 20px;
   font-size: 14px;
 }
+.keyword-item:hover {
+  background-color: #ec4747;
+  cursor: pointer;
+}
 
 .search-button {
   width: 100%;

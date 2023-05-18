@@ -5,7 +5,6 @@ import {AuthService} from "./auth.service";
 export const authGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
-  console.log(authService.IsAuthorized());
   if (!authService.IsAuthorized()){
     return router.parseUrl("/auth")
   }

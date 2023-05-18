@@ -10,10 +10,18 @@
   border-radius: 4px;
 }
 
+
 .profile label {
   font-weight: bold;
   margin-top: 10px;
   display: block;
+}
+
+.profile select{
+  width: calc(100% + 16px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .profile input,
@@ -53,7 +61,7 @@
 }
 
 .profile .add-keyword {
-  background-color: #28a745;
+  background-color: #333;
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -62,12 +70,12 @@
 }
 
 .profile .add-keyword:hover {
-  background-color: #218838;
+  background-color: #1c181b;
   cursor: pointer;
 }
 
 .profile .save-button {
-  background-color: #007bff;
+  background-color: #333;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -76,7 +84,7 @@
 }
 
 .profile .save-button:hover {
-  background-color: #0056b3;
+  background-color: #1c181b;
   cursor: pointer;
 }
 
@@ -95,3 +103,46 @@
   display: block;
   margin-bottom: 5px;
 }
+
+.profile-container{
+  margin-bottom: 25px;
+}
+
+.save-button{
+  width: calc(100% + 20px);
+}
+
+
+.account-actions {
+  margin-top: 20px;
+  width: calc(100% + 20px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.logout-button,
+.delete-account-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 40%;
+}
+
+.logout-button {
+  margin-right: 10px;
+}
+
+.delete-account-button {
+  background-color: #ff9800;
+}
+
+.logout-button:hover,
+.delete-account-button:hover {
+  opacity: 0.8;
+}
+
+

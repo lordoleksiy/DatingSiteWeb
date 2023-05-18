@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import {FormsModule} from "@angular/forms";
+import {CommonElementsModule} from "../common-elements/common-elements.module";
 
 
 
@@ -11,7 +12,8 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    CommonElementsModule
   ]
 })
 export class ProfileModule { }

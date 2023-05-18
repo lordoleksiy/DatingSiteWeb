@@ -1,4 +1,4 @@
-import {IKeyword} from "./IKeyword";
+import {IKeyword} from "../IKeyword";
 
 export interface IProfile {
   age: number,
@@ -7,5 +7,7 @@ export interface IProfile {
   keywords: IKeyword[],
   description: string,
   firstName: string,
-  lastName: string
+  lastName: string,
+  contact?: string,
+  username?: string
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../../services/auth/auth.service";
 import {passwordMatchValidator} from "./passwordValidator";
-import {INewUser} from "../../../../models/INewUser";
+import {INewUser} from "../../../../models/User/INewUser";
 import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";
 

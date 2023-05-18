@@ -1,16 +1,9 @@
-<header>
-  <img src="./assets/icon.png" height="64" width="64" alt="Logo"/>
-  <h1>Find your missing couple!</h1>
-  <a routerLink="/profile">Your account</a>
-</header>
-
+<app-header [link]="{name:'Your profile', address:'/profile'}"></app-header>
 <div class="container">
   <app-search></app-search>
   <app-recycler></app-recycler>
 </div>
+<app-footer class="footer"></app-footer>
 
-<footer>
-  Created By Bobrік
-</footer>
 
 
